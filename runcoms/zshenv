@@ -22,11 +22,3 @@ export MAVEN_HOME="/usr/local/opt/maven/libexec/"
 export MAVEN_OPTS="-Xms512m -Xmx2048m"
 
 export GRADLE_OPTS="-Dorg.gradle.daemon=true"
-
-# pip should only run if there is a virtualenv currently activated
-export PIP_REQUIRE_VIRTUALENV=true
-
-# cache pip-installed packages to avoid re-downloading
-export PIP_DOWNLOAD_CACHE=$HOME/.pip/cache
-
-export WORKON_HOME=~/Developer/Virtualenvs
