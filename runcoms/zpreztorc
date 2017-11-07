@@ -27,7 +27,16 @@ zstyle ':prezto:*:*' color 'yes'
 # Set the Prezto modules to load (browse modules).
 # The order matters.
 zstyle ':prezto:load' pmodule \
+  'archive' \
+  'autosuggestions' \
+  'docker' \
   'environment' \
+  'fasd' \
+  'git' \
+  'homebrew' \
+  'osx' \
+  'syntax-highlighting' \
+  'history-substring-search' \
   'terminal' \
   'editor' \
   'history' \
@@ -36,11 +45,6 @@ zstyle ':prezto:load' pmodule \
   'utility' \
   'completion' \
   'prompt' \
-  'osx' \
-  'history-substring-search' \
-  'homebrew' \
-  'git' \
-  'syntax-highlighting'
 
 #
 # Autosuggestions
