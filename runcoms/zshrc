@@ -28,6 +28,11 @@ if [[ -s "/usr/local/share/zsh/site-functions/_aws" ]]; then
 
 fi
 
+# Source zsh-nvm
+if [[ -s "$HOME/.zsh-nvm/zsh-nvm.plugin.zsh" ]]; then
+  source $HOME/.zsh-nvm/zsh-nvm.plugin.zsh
+fi
+
 # Useful aliases
 alias fixow='/System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/LaunchServices.framework/Versions/A/Support/lsregister -kill -r -domain local -domain user;killall Finder;echo "Open With has been rebuilt, Finder will relaunch"'
 
@@ -39,3 +44,9 @@ alias history='history 0'
 
 alias gcam='git commit --verbose --all --message'
 alias gitk="gitk --all $1 2>/dev/null &"
+
+# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
+export PATH="$PATH:$HOME/.rvm/bin"
+export PATH="/usr/local/opt/solr@5.5/bin:$PATH"
+
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
