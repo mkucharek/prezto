@@ -42,7 +42,12 @@ alias .....='cd ../../../..'
 
 alias history='history 0'
 
-alias gcam='git commit --verbose --all --message'
+# Git amend all
+alias gcaf='git commit --all --amend --reuse-message HEAD'
+
+# Git unapply
+alias gsu='git stash show -p | git apply -R'
+
 alias gitk="gitk --all $1 2>/dev/null &"
 
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
