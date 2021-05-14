@@ -37,6 +37,9 @@ alias .....='cd ../../../..'
 
 alias history='history 0'
 
+# Git english language
+alias git='LANG=en_GB git'
+
 # Git amend all
 alias gcaf='git commit --all --amend --reuse-message HEAD'
 
@@ -44,3 +47,10 @@ alias gcaf='git commit --all --amend --reuse-message HEAD'
 alias gsu='git stash show -p | git apply -R'
 
 alias gitk="gitk --all $1 2>/dev/null &"
+
+
+# tabtab source for packages
+# uninstall by removing these lines
+[[ -f ~/.config/tabtab/__tabtab.zsh ]] && . ~/.config/tabtab/__tabtab.zsh || true
+export VOLTA_HOME="$HOME/.volta"
+export PATH="$VOLTA_HOME/bin:$PATH"
