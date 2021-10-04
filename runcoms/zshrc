@@ -12,11 +12,6 @@ fi
 
 # Customize to your needs...
 
-# Online help
-unalias run-help
-autoload run-help
-HELPDIR=/usr/local/share/zsh/help
-
 # Source machine-specific config
 if [[ -s "${ZDOTDIR:-$HOME}/.zlocal" ]]; then
   source "${ZDOTDIR:-$HOME}/.zlocal"
