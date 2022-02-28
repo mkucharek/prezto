@@ -41,6 +41,8 @@ alias gcaf='git commit --all --amend --reuse-message HEAD'
 # Git unapply
 alias gsu='git stash show -p | git apply -R'
 
+# Git pull tags force
+alias gfT='git fetch --tags -f'
 alias gitk="gitk --all $1 2>/dev/null &"
 
 
