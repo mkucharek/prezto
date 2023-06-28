@@ -18,10 +18,10 @@ fi
 #
 
 if [[ -z "$EDITOR" ]]; then
-  export EDITOR='/usr/local/bin/vim'
+  export EDITOR='/opt/homebrew/bin/vim'
 fi
 if [[ -z "$VISUAL" ]]; then
-  export VISUAL='/usr/local/bin/vim'
+  export VISUAL='/opt/homebrew/bin/vim'
 fi
 if [[ -z "$PAGER" ]]; then
   export PAGER='less'
