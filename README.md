@@ -11,13 +11,13 @@ and prompt themes.
 Prezto will work with any recent release of Zsh, but the minimum required
 version is **4.3.11**.
 
-01. Launch Zsh:
+1.  Launch Zsh:
 
     ```console
     zsh
     ```
 
-02. Clone the repository:
+2.  Clone the repository:
 
     ```console
     git clone --recursive https://github.com/sorin-ionescu/prezto.git "${ZDOTDIR:-$HOME}/.zprezto"
@@ -26,28 +26,28 @@ version is **4.3.11**.
     <details>
       <summary><em>Optional: Installing in <code>$XDG_CONFIG_HOME</code></em></summary>
 
-      Optionally, if you already have `$XDG_CONFIG_HOME` configured (usually as
-      _`$HOME/.config`_ by default) and intend to install Prezto under
-      _`$XDG_CONFIG_HOME/zsh`_ instead, you can clone the repository there and
-      configure `$ZDOTDIR` separately if not already configured.
+    Optionally, if you already have `$XDG_CONFIG_HOME` configured (usually as
+    _`$HOME/.config`_ by default) and intend to install Prezto under
+    _`$XDG_CONFIG_HOME/zsh`_ instead, you can clone the repository there and
+    configure `$ZDOTDIR` separately if not already configured.
 
-      - Clone the repository:
+    - Clone the repository:
 
-        ```console
-        git clone --recursive https://github.com/sorin-ionescu/prezto.git "${ZDOTDIR:-${XDG_CONFIG_HOME:-$HOME/.config}/zsh}/.zprezto"
-        ```
+      ```console
+      git clone --recursive https://github.com/sorin-ionescu/prezto.git "${ZDOTDIR:-${XDG_CONFIG_HOME:-$HOME/.config}/zsh}/.zprezto"
+      ```
 
-      - Configure `$XDG_CONFIG_HOME` and `$ZDOTDIR` in _`$HOME/.zshenv`_:
+    - Configure `$XDG_CONFIG_HOME` and `$ZDOTDIR` in _`$HOME/.zshenv`_:
 
-        ```sh
-        export XDG_CONFIG_HOME="${XDG_CONFIG_HOME:=$HOME/.config}"
-        [[ -d $XDG_CONFIG_HOME/zsh ]] && export ZDOTDIR="$XDG_CONFIG_HOME/zsh"
-        source "$ZDOTDIR/.zshenv"
-        ```
+      ```sh
+      export XDG_CONFIG_HOME="${XDG_CONFIG_HOME:=$HOME/.config}"
+      [[ -d $XDG_CONFIG_HOME/zsh ]] && export ZDOTDIR="$XDG_CONFIG_HOME/zsh"
+      source "$ZDOTDIR/.zshenv"
+      ```
 
     </details>
 
-03. Create a new Zsh configuration by copying/linking the Zsh configuration
+3.  Create a new Zsh configuration by copying/linking the Zsh configuration
     files provided:
 
     ```console
@@ -65,13 +65,13 @@ version is **4.3.11**.
     back up your original configs and replace them with the provided Prezto
     [_`runcoms`_][10].
 
-04. Set Zsh as your default shell:
+4.  Set Zsh as your default shell:
 
     ```console
     chsh -s /bin/zsh
     ```
 
-05. Open a new Zsh terminal window or tab.
+5.  Open a new Zsh terminal window or tab.
 
 ### Troubleshooting
 
@@ -93,6 +93,8 @@ cd $ZPREZTODIR
 git pull
 git submodule sync --recursive
 git submodule update --init --recursive
+cd $ZPREZTODIR/contrib
+git pull
 ```
 
 ## Usage
@@ -102,15 +104,15 @@ accompanying README files to learn about what is available.
 
 ### Modules
 
-01. Browse [_`modules`_][9] to see what is available.
-02. Load the modules you need in _`${ZDOTDIR:-$HOME}/.zpreztorc`_ and then open
+1.  Browse [_`modules`_][9] to see what is available.
+2.  Load the modules you need in _`${ZDOTDIR:-$HOME}/.zpreztorc`_ and then open
     a new Zsh terminal window or tab.
 
 ### Themes
 
-01. For a list of themes, type `prompt -l`.
-02. To preview a theme, type `prompt -p name`.
-03. Load the theme you like in _`${ZDOTDIR:-$HOME}/.zpreztorc`_ and then
+1.  For a list of themes, type `prompt -l`.
+2.  To preview a theme, type `prompt -p name`.
+3.  Load the theme you like in _`${ZDOTDIR:-$HOME}/.zpreztorc`_ and then
     open a new Zsh terminal window or tab.
 
     ![sorin theme][2]
@@ -121,8 +123,8 @@ accompanying README files to learn about what is available.
 
 ### External Modules
 
-01. By default modules will be loaded from [_`/modules`_][9] and _`/contrib`_.
-02. Additional module directories can be added to the
+1.  By default modules will be loaded from [_`/modules`_][9] and _`/contrib`_.
+2.  Additional module directories can be added to the
     `:prezto:load:pmodule-dirs` setting in _`${ZDOTDIR:-$HOME}/.zpreztorc`_.
 
     Note that module names need to be unique or they will cause an error when
