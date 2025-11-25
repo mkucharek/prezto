@@ -30,16 +30,7 @@ zstyle ':prezto:*:*' color 'yes'
 # Set the Prezto modules to load (browse modules).
 # The order matters.
 zstyle ':prezto:load' pmodule \
-  'archive' \
-  'autosuggestions' \
-  'docker' \
   'environment' \
-  'fasd' \
-  'git' \
-  'homebrew' \
-  'osx' \
-  'syntax-highlighting' \
-  'history-substring-search' \
   'terminal' \
   'editor' \
   'history' \
@@ -47,7 +38,16 @@ zstyle ':prezto:load' pmodule \
   'spectrum' \
   'gnu-utility' \
   'utility' \
+  'archive' \
+  'ssh' \
+  'git' \
+  'docker' \
+  'homebrew' \
+  'osx' \
+  'command-not-found' \
+  'autosuggestions' \
   'completion' \
+  'syntax-highlighting' \
   'history-substring-search' \
   'prompt'
 
@@ -104,23 +104,23 @@ zstyle ':prezto:module:editor' key-bindings 'emacs'
 # zstyle ':prezto:module:history' histfile "${ZDOTDIR:-$HOME}/.zsh_history"
 
 # Set the maximum  number  of  events  stored  in  the  internal history list.
-# zstyle ':prezto:module:history' histsize 10000
+zstyle ':prezto:module:history' histsize 50000
 
 # Set the maximum number of history events to save in the history file.
-# zstyle ':prezto:module:history' savehist 10000
+zstyle ':prezto:module:history' savehist 50000
 
 #
 # History Substring Search
 #
 
-# Set the query found color.
-zstyle ':prezto:module:history-substring-search:color' found ''
+# Set the query found color (commented = use defaults).
+# zstyle ':prezto:module:history-substring-search:color' found 'bg=magenta,fg=white,bold'
 
 # Set the query not found color.
-zstyle ':prezto:module:history-substring-search:color' not-found ''
+# zstyle ':prezto:module:history-substring-search:color' not-found 'bg=red,fg=white,bold'
 
 # Set the search globbing flags.
-zstyle ':prezto:module:history-substring-search' globbing-flags ''
+# zstyle ':prezto:module:history-substring-search' globbing-flags ''
 
 # Enable search case-sensitivity.
 # zstyle ':prezto:module:history-substring-search' case-sensitive 'yes'
@@ -198,38 +198,34 @@ zstyle ':prezto:module:prompt' theme 'sorin'
 #
 
 # Set the SSH identities to load into the agent.
-# zstyle ':prezto:module:ssh:load' identities 'id_rsa' 'id_rsa2' 'id_github'
+zstyle ':prezto:module:ssh:load' identities 'id_rsa'
 
 #
 # Syntax Highlighting
 #
 
 # Set syntax highlighters.
-# By default, only the main highlighter is enabled.
-# zstyle ':prezto:module:syntax-highlighting' highlighters \
-#   'main' \
-#   'brackets' \
-#   'pattern' \
-#   'line' \
-#   'cursor' \
-#   'root'
-#
+zstyle ':prezto:module:syntax-highlighting' highlighters \
+  'main' \
+  'brackets' \
+  'pattern'
+
 # Set syntax highlighting styles.
 # zstyle ':prezto:module:syntax-highlighting' styles \
 #   'builtin' 'bg=blue' \
 #   'command' 'bg=blue' \
 #   'function' 'bg=blue'
-#
-# Set syntax pattern styles.
-# zstyle ':prezto:module:syntax-highlighting' pattern \
-#   'rm*-rf*' 'fg=white,bold,bg=red'
+
+# Highlight dangerous patterns.
+zstyle ':prezto:module:syntax-highlighting' pattern \
+  'rm*-rf*' 'fg=white,bold,bg=red'
 
 #
 # Terminal
 #
 
 # Auto set the tab and window titles.
-# zstyle ':prezto:module:terminal' auto-title 'yes'
+zstyle ':prezto:module:terminal' auto-title 'yes'
 
 # Set the window title format.
 # zstyle ':prezto:module:terminal:window-title' format '%n@%m: %s'

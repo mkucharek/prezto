@@ -10,6 +10,11 @@ if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
   source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
 fi
 
+# zoxide (smart directory jumping)
+if (( $+commands[zoxide] )); then
+  eval "$(zoxide init zsh)"
+fi
+
 # Customize to your needs...
 
 # Source machine-specific config
@@ -17,10 +22,10 @@ if [[ -s "${ZDOTDIR:-$HOME}/.zlocal" ]]; then
   source "${ZDOTDIR:-$HOME}/.zlocal"
 fi
 
-# Source awscli completion
-if [[ -s "/usr/local/share/zsh/site-functions/_aws" ]]; then
-    source "/usr/local/share/zsh/site-functions/_aws"
-
+# AWS CLI completion (works with v1 and v2)
+if (( $+commands[aws_completer] )); then
+  autoload -Uz bashcompinit && bashcompinit
+  complete -C aws_completer aws
 fi
 
 # Useful aliases
